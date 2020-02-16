@@ -22,7 +22,7 @@
         "catalog": ""
     },
     "catalog": {
-        "list": "#list >dl >dd",
+        "list": "#list>dl>dd",
         "name": "a",
         "chapter": "a"
     },
