@@ -1,14 +1,15 @@
 {
-    "name": "jiyi_顶点小说",
-    "url": "wap.xdingdiann.com",
+    "name": "追书阁",
+    "url": "www.keepshu.com",
     "version": 100,
     "search": {
-        "url": "http://wap.xdingdiann.com/SearchBook.php@post->keyword=${key}",
-		"charset": "utf-8",
-        "list": ".recommend>.hot_sale",
-        "name": "a>.title",
-        "author": "a>.author:nth-child(2)@match->(?<=作者：)(.+)",
-        "cover": "",
+        "url": "https://www.keepshu.com/search.php@post->searchkey=${key}",
+		"charset": "gbk",
+        "list": "ul.search-list>li",
+        "name": "h3>a",
+        "author": "p.author@replace->作者：->",
+        "cover": "img",
+		"summary": "p.intro@replace->作品简介： ->",
         "detail": "a"
     },
     "detail": {
@@ -19,15 +20,14 @@
         "status": "meta[property=og:novel:status]@attr->content",
         "update": "meta[property=og:novel:update_time]@attr->content",
         "lastChapter": "meta[property=og:novel:latest_chapter_name]@attr->content",
-        "catalog": ".recommend>h2:nth-child(3)>a"
+        "catalog": ".catalogbtn"
     },
     "catalog": {
-        "list": "#chapterlist>p:nth-child(n+2)",
+        "list": "ul.clearfix>li>span",
         "name": "a",
-        "chapter": "a@attr->href@replace->wap.xding->www.xding"
+        "chapter": "a"
     },
     "chapter": {
-        "content": "#content",
-        "filter": ["@div", "@script"]
+        "content": "div.article-con"
     }
 }

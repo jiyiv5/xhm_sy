@@ -1,15 +1,16 @@
 {
-    "name": "jiyi_吞噬小说网",
-    "url": "www.tsxsw.net",
+    "name": "斋书苑",
+    "url": "www.zhaishuyuan.com",
     "version": 100,
     "search": {
-        "url": "http://www.tsxsw.net/search.php@post->keyword=${key}",
+        "url": "https://www.zhaishuyuan.com/search/@post->s=${key}",
 		"charset": "gbk",
-        "list": ".banner>ul",
-        "name": ".s2>a",
-        "author": ".s4",
-        "cover": "",
-        "detail": ".s2>a"
+        "list": "#sitembox>dl",
+        "name": "dd:nth-child(2)>h3>a",
+        "author": "dd:nth-child(3)>span:nth-child(1)",
+        "cover": "dt>a>img",
+		"summary": ".book_des",
+        "detail": "dd:nth-child(2)>h3>a"
     },
     "detail": {
         "name": "meta[property=og:novel:book_name]@attr->content",
@@ -22,7 +23,7 @@
         "catalog": ""
     },
     "catalog": {
-        "list": ".chapterlist:nth-child(5)>ul>li",
+        "list": "#readerlists>ul>li",
         "name": "a",
         "chapter": "a"
     },

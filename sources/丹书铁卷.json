@@ -1,34 +1,33 @@
 {
-    "name": "jiyi_铅笔小说",
-    "url": "www.x23qb.com",
+    "name": "丹书铁卷",
+    "url": "www.dstiejuan.com",
     "version": 100,
     "search": {
-        "url": "https://www.x23qb.com/search.php@post->searchkey=${key}",
-		"charset": "gbk",
-        "list": "#sitebox>#nr",
-        "name": "h3>a",
-        "author": "",
-        "cover": "a>img",
-		"summary": "dd.book_des",
-        "detail": "h3>a"
+        "url": "https://www.dstiejuan.com/search.html@post->searchkey=${key}",
+		"charset": "utf-8",
+        "list": "ul.library>li",
+        "name": "a.bookname",
+        "author": "p>a:nth-child(1)",
+        "cover": "a.bookimg>img",
+		"summary": "p.intro",
+        "detail": "a.bookname"
     },
     "detail": {
         "name": "meta[property=og:novel:book_name]@attr->content",
         "author": "meta[property=og:novel:author]@attr->content",
         "cover": "meta[property=og:image]@attr->content",
-        "summary": "meta[property=og:description]@attr->content",
+        "summary": ".content>p.intro",
         "status": "meta[property=og:novel:status]@attr->content",
         "update": "meta[property=og:novel:update_time]@attr->content",
         "lastChapter": "meta[property=og:novel:latest_chapter_name]@attr->content",
-        "catalog": ""
+        "catalog": ".action>a:nth-child(1)"
     },
     "catalog": {
-        "list": "#chapterList>li",
+        "list": ".read>dl:nth-child(n+2)>dd",
         "name": "a",
         "chapter": "a"
     },
     "chapter": {
-        "content": "#TextContent",
-        "filter": ["@dt"]
+        "content": "#content>p"
     }
 }

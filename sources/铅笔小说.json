@@ -1,16 +1,16 @@
 {
-    "name": "jiyi_斋书苑",
-    "url": "www.zhaishuyuan.com",
+    "name": "铅笔小说",
+    "url": "www.x23qb.com",
     "version": 100,
     "search": {
-        "url": "https://www.zhaishuyuan.com/search/@post->s=${key}",
+        "url": "https://www.x23qb.com/search.php@post->searchkey=${key}",
 		"charset": "gbk",
-        "list": "#sitembox>dl",
-        "name": "dd:nth-child(2)>h3>a",
-        "author": "dd:nth-child(3)>span:nth-child(1)",
-        "cover": "dt>a>img",
-		"summary": ".book_des",
-        "detail": "dd:nth-child(2)>h3>a"
+        "list": "#sitebox>#nr",
+        "name": "h3>a",
+        "author": "",
+        "cover": "a>img",
+		"summary": "dd.book_des",
+        "detail": "h3>a"
     },
     "detail": {
         "name": "meta[property=og:novel:book_name]@attr->content",
@@ -23,11 +23,12 @@
         "catalog": ""
     },
     "catalog": {
-        "list": "#readerlists>ul>li",
+        "list": "#chapterList>li",
         "name": "a",
         "chapter": "a"
     },
     "chapter": {
-        "content": "#content>p"
+        "content": "#TextContent",
+        "filter": ["@dt"]
     }
 }

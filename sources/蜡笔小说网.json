@@ -1,16 +1,15 @@
 {
-    "name": "jiyi_追书阁",
-    "url": "www.keepshu.com",
+    "name": "蜡笔小说网",
+    "url": "www.biquwo.net",
     "version": 100,
     "search": {
-        "url": "https://www.keepshu.com/search.php@post->searchkey=${key}",
-		"charset": "gbk",
-        "list": "ul.search-list>li",
-        "name": "h3>a",
-        "author": "p.author@replace->作者：->",
-        "cover": "img",
-		"summary": "p.intro@replace->作品简介： ->",
-        "detail": "a"
+        "url": "http://www.biquwo.net/searchbook.php?keyword=${key}",
+		"charset": "utf-8",
+        "list": ".novelslist2>ul>li:nth-child(n+2)",
+        "name": ".s2>a",
+        "author": ".s4",
+        "cover": "",
+        "detail": ".s2>a"
     },
     "detail": {
         "name": "meta[property=og:novel:book_name]@attr->content",
@@ -20,14 +19,15 @@
         "status": "meta[property=og:novel:status]@attr->content",
         "update": "meta[property=og:novel:update_time]@attr->content",
         "lastChapter": "meta[property=og:novel:latest_chapter_name]@attr->content",
-        "catalog": ".catalogbtn"
+        "catalog": ""
     },
     "catalog": {
-        "list": "ul.clearfix>li>span",
+        "list": "#list>dl>dd",
         "name": "a",
         "chapter": "a"
     },
     "chapter": {
-        "content": "div.article-con"
+        "content": "#content",
+        "filter": ["@script", "@div"]
     }
 }

@@ -1,32 +1,37 @@
 {
-    "name": "jiyi_笔趣库",
-    "url": "www.biquku.la",
+    "name": "九桃小说",
+    "url": "www.9txs.com",
     "version": 100,
     "search": {
-        "url": "http://www.biquku.la/modules/article/search.php@post->searchkey=${key}",
+        "url": "https://www.9txs.com/search.html@post->searchkey=${key}",
 		"charset": "utf-8",
-        "list": "tbody>tr:nth-child(n+2)",
-        "name": "td:nth-child(1)>a",
-        "author": "td:nth-child(3)",
-        "cover": "",
-        "detail": "td:nth-child(1)>a"
+        "list": "ul.library>li",
+        "name": "a:nth-child(2)",
+        "author": "p>a:nth-child(1)",
+        "cover": "a>img",
+		"summary": ".intro",
+        "detail": "a:nth-child(2)"
     },
     "detail": {
         "name": "meta[property=og:novel:book_name]@attr->content",
         "author": "meta[property=og:novel:author]@attr->content",
         "cover": "meta[property=og:image]@attr->content",
-        "summary": "meta[property=og:description]@attr->content",
+        "summary": ".content>.intro",
         "status": "meta[property=og:novel:status]@attr->content",
         "update": "meta[property=og:novel:update_time]@attr->content",
         "lastChapter": "meta[property=og:novel:latest_chapter_name]@attr->content",
-        "catalog": ""
+        "catalog": ".action>a:nth-child(1)"
     },
     "catalog": {
-        "list": "#list>dl>dd",
+        "list": ".read>dl:nth-child(n+2)",
+        "booklet": {
+            "name": "dt>b",
+            "list": "dd"
+        },
         "name": "a",
         "chapter": "a"
     },
     "chapter": {
-        "content": "#content"
+        "content": "#content>p"
     }
 }

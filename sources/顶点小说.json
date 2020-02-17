@@ -1,15 +1,15 @@
 {
-    "name": "jiyi_星空小说网",
-    "url": "www.aixs.org",
+    "name": "顶点小说",
+    "url": "wap.xdingdiann.com",
     "version": 100,
     "search": {
-        "url": "http://www.aixs.org/search.php@post->key=${key}",
+        "url": "http://wap.xdingdiann.com/SearchBook.php@post->keyword=${key}",
 		"charset": "utf-8",
-        "list": ".secd-rank-list",
-        "name": "dd>a",
-        "author": "dd>p:nth-child(2)>a:nth-child(1)",
-        "cover": "dt>a>img",
-        "detail": "dd>a"
+        "list": ".recommend>.hot_sale",
+        "name": "a>.title",
+        "author": "a>.author:nth-child(2)@match->(?<=作者：)(.+)",
+        "cover": "",
+        "detail": "a"
     },
     "detail": {
         "name": "meta[property=og:novel:book_name]@attr->content",
@@ -19,14 +19,15 @@
         "status": "meta[property=og:novel:status]@attr->content",
         "update": "meta[property=og:novel:update_time]@attr->content",
         "lastChapter": "meta[property=og:novel:latest_chapter_name]@attr->content",
-        "catalog": ".header>.tab>a:nth-child(2)"
+        "catalog": ".recommend>h2:nth-child(3)>a"
     },
     "catalog": {
-        "list": "#chapter",
+        "list": "#chapterlist>p:nth-child(n+2)",
         "name": "a",
-        "chapter": "a"
+        "chapter": "a@attr->href@replace->wap.xding->www.xding"
     },
     "chapter": {
-        "content": "#txt>dd>p"
+        "content": "#content",
+        "filter": ["@div", "@script"]
     }
 }
