@@ -1,15 +1,15 @@
 {
     "name": "斋书苑",
     "url": "www.zhaishuyuan.com",
-    "version": 101,
+    "version": 103,
     "search": {
         "url": "https://www.zhaishuyuan.com/search/@post->s=${key}",
-		"charset": "gbk",
+        "charset": "gbk",
         "list": "#sitembox>dl",
         "name": "dd:nth-child(2)>h3>a",
         "author": "dd:nth-child(3)>span:nth-child(1)",
         "cover": "dt>a>img",
-		"summary": ".book_des",
+        "summary": ".book_des",
         "detail": "dt>a"
     },
     "detail": {
