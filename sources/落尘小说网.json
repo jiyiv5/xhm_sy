@@ -1,7 +1,7 @@
 {
     "name": "落尘小说网",
     "url": "m.luocs.cn",
-    "version": 100,
+    "version": 101,
     "search": {
         "url": "https://m.luocs.cn/s.php@post->type=articlename&s=${key}&submit=",
 		"charset": "gbk",
@@ -27,6 +27,9 @@
         "chapter": "a"
     },
     "chapter": {
-        "content": "#book_text"
+        "content": "#book_text",
+        "purify": [
+            "记住本站网址(.*?)就能进入本站"
+        ]
     }
 }
