@@ -1,21 +1,20 @@
 {
     "name": "顶点小说",
-    "url": "wap.xdingdiann.com",
-    "version": 100,
+    "url": "m.xdingdiann.com",
+    "version": 101,
     "search": {
-        "url": "http://wap.xdingdiann.com/SearchBook.php@post->keyword=${key}",
+        "url": "http://m.xdingdiann.com/SearchBook.php@post->keyword=${key}&t=1",
 		"charset": "utf-8",
         "list": ".recommend>.hot_sale",
         "name": "a>.title",
         "author": "a>.author:nth-child(2)@match->(?<=作者：)(.+)",
-        "cover": "",
         "detail": "a"
     },
     "detail": {
         "name": "meta[property=og:novel:book_name]@attr->content",
         "author": "meta[property=og:novel:author]@attr->content",
         "cover": "meta[property=og:image]@attr->content",
-        "summary": "meta[property=og:description]@attr->content",
+        "summary": "p.review",
         "status": "meta[property=og:novel:status]@attr->content",
         "update": "meta[property=og:novel:update_time]@attr->content",
         "lastChapter": "meta[property=og:novel:latest_chapter_name]@attr->content",
@@ -24,7 +23,7 @@
     "catalog": {
         "list": "#chapterlist>p:nth-child(n+2)",
         "name": "a",
-        "chapter": "a@attr->href@replace->wap.xding->www.xding"
+        "chapter": "a@attr->href@replace->m.xding->www.xding"
     },
     "chapter": {
         "content": "#content",
