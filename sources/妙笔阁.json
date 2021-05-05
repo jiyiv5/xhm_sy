@@ -1,16 +1,16 @@
 {
     "name": "妙笔阁",
     "url": "www.imiaobige.com",
-    "version": 100,
+    "version": 101,
     "search": {
-        "url": "https://www.imiaobige.com/search.html@post->searchkey=${key}",
+        "url": "http://www.imiaobige.com/search.html@post->searchkey=${key}",
 		"charset": "utf-8",
-        "list": "#sitembox>dl",
-        "name": "dd:nth-child(2)>h3>a",
-        "author": "dd:nth-child(3)>a:nth-child(2)",
-        "cover": "dt>a>img",
+        "list": "#sitembox > dl",
+        "name": "dd:nth-child(2) > h3 > a",
+        "author": "dd:nth-child(3) > a:nth-child(2)",
+        "cover": "dt > a > img",
 		"summary": "dd.book_des",
-        "detail": "dt>a"
+        "detail": "dt > a"
     },
     "detail": {
         "name": "meta[property=og:novel:book_name]@attr->content",
@@ -23,7 +23,7 @@
         "catalog": "a.tgcj:nth-child(1)"
     },
     "catalog": {
-        "list": "#readerlists>ul:gt(0)",
+        "list": "#readerlists > ul:gt(0)",
         "booklet": {
             "name": "h3",
             "list": "li"
@@ -32,6 +32,6 @@
         "chapter": "a"
     },
     "chapter": {
-        "content": "#content>p"
+        "content": "#content > p"
     }
 }
