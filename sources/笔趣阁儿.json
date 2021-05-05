@@ -1,7 +1,7 @@
 {
     "name": "笔趣阁儿",
     "url": "www.biquger.com",
-    "version": 100,
+    "version": 101,
     "search": {
         "url": "http://www.biquger.com/modules/article/search.php?searchkey=${key}",
 		"charset": "utf-8",
@@ -15,18 +15,19 @@
         "name": "meta[property=og:novel:book_name]@attr->content",
         "author": "meta[property=og:novel:author]@attr->content",
         "cover": "meta[property=og:image]@attr->content",
-        "summary": "meta[property=og:description]@attr->content",
+        "summary": "#list > p",
         "status": "meta[property=og:novel:status]@attr->content",
         "update": "meta[property=og:novel:update_time]@attr->content",
         "lastChapter": "meta[property=og:novel:latest_chapter_name]@attr->content",
         "catalog": ""
     },
     "catalog": {
-        "list": "#list >dl>dd",
+        "list": "#list > dl > dd",
         "name": "a",
         "chapter": "a"
     },
     "chapter": {
-        "content": "#booktext"
+        "content": "#booktext",
+		"filter": ["@center"]
     }
 }
