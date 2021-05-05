@@ -1,33 +1,31 @@
 {
     "name": "完本神站",
-    "url": "www.wanbentxt.com",
-    "version": 100,
+    "url": "www.wanbentxt.net",
+    "version": 101,
     "search": {
-        "url": "https://www.wanbentxt.com/modules/article/search.php@post->searchtype=articlename&searchkey=${key}",
-		"charset": "gbk",
-        "list": ".resultLeft>ul>li",
-        "name": ".sortPhr>a>h3",
-        "author": ".sortPhr>.author>a",
-        "cover": ".sortImg>a>img",
-		"summary": ".intro",
-        "detail": ".sortPhr>a"
+        "url": "http://www.wanbentxt.net/search/?searchkey=${key}",
+		"charset": "utf-8",
+        "list": "table.history-table > tbody > tr",
+        "name": "td:nth-child(2) > a",
+        "author": "td:nth-child(3)",
+        "detail": "td:nth-child(2) > a"
     },
     "detail": {
-        "name": "h1",
-        "author": ".writer>a",
-        "cover": ".detailTopLeft>img",
-        "summary": "tbody>tr:nth-child(3)>td:nth-child(2)",
-        "status": ".detailTopLeft>span.going",
-        "update": ".chapterTitle>span@match->(.+)(?<=更新至)",
-        "lastChapter": ".chapterTitle>span>a",
+        "name": "meta[property=og:novel:book_name]@attr->content",
+        "author": "meta[property=og:novel:author]@attr->content",
+        "cover": "meta[property=og:image]@attr->content",
+        "summary": "#intro > p:nth-child(1)",
+        "status": "meta[property=og:novel:status]@attr->content",
+        "update": "meta[property=og:novel:update_time]@attr->content",
+        "lastChapter": "meta[property=og:novel:latest_chapter_name]@attr->content",
         "catalog": ""
     },
     "catalog": {
-        "list": ".chapter>ul>li",
+        "list": "#list > dl > dd",
         "name": "a",
         "chapter": "a"
     },
     "chapter": {
-        "content": ".readerCon>p"
+        "content": "#content > p"
     }
 }
