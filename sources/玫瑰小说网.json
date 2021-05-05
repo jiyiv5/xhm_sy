@@ -1,9 +1,9 @@
 {
     "name": "玫瑰小说网",
-    "url": "www.meiguixs.net",
-    "version": 100,
+    "url": "www.meiguixsw.com",
+    "version": 101,
     "search": {
-        "url": "http://www.meiguixs.net/modules/article/search.php@post->searchtype=articlename&searchkey=${key}",
+        "url": "https://www.meiguixsw.com/modules/article/search.php@post->searchtype=articlename&searchkey=${key}",
 		"charset": "gbk",
         "list": "tbody>tr:nth-child(n+2)",
         "name": "td:nth-child(1)>a",
