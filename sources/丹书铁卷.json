@@ -1,9 +1,9 @@
 {
     "name": "丹书铁卷",
     "url": "www.dstiejuan.com",
-    "version": 100,
+    "version": 101,
     "search": {
-        "url": "https://www.dstiejuan.com/search.html@post->searchkey=${key}",
+        "url": "http://www.dstiejuan.com/search.html@post->searchkey=${key}",
 		"charset": "utf-8",
         "list": "ul.library>li",
         "name": "a.bookname",
@@ -23,7 +23,7 @@
         "catalog": ".action>a:nth-child(1)"
     },
     "catalog": {
-        "list": ".read>dl:nth-child(n+2)>dd",
+        "list": ".read > dl:nth-child(2) > dd",
         "name": "a",
         "chapter": "a"
     },
